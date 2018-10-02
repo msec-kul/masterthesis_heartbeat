@@ -1,0 +1,122 @@
+{
+  "connectors": [
+    {
+      "systemID": "HGW1",
+      "type": "LAMP_CONNECTORTYPE_HUE",
+      "initSettings": [
+        "192.168.42.2",
+        "vVRoYEsRfD2Q6WOprxzZYACQgmfxTapER-SKIlCd"
+      ]
+    },
+    {
+      "systemID": "LGW1",
+      "type": "LAMP_CONNECTORTYPE_OSRAM",
+      "initSettings": [
+        "michielwillocx@hotmail.com",
+        "smiotsmiot",
+        "OSR017BE8CD"
+      ]
+    },
+    {
+      "systemID": "VSS1",
+      "type": "SENSOR_CONNECTORTYPE_VERSASENSE",
+      "initSettings": [
+        "https://gateway.versasense.com:8889"
+      ]
+    },
+    {
+      "systemID": "ARD1",
+      "type": "SENSOR_CONNECTORTYPE_ARDUINO",
+      "initSettings": [
+        "84:68:3E:00:32:88"
+      ]
+    },
+    {
+      "systemID": "SMIoT1",
+      "type": "SENSOR_CONNECTORTYPE_ARDUINO",
+      "initSettings": [
+        "84:68:3E:00:32:88"
+      ]
+    }
+  ],
+  "components": [
+    {
+      "componentName": "Kitchen",
+      "childComponents": [],
+      "devices": [
+        {
+          "type": "lamp",
+          "model": "LAMP_TYPE_HUE",
+          "uniqueID": "00:17:88:01:02:3c:f5:2c-0b",
+          "settings": [],
+          "connector": "HGW1"
+        },
+        {
+          "type": "lamp",
+          "model": "LAMP_TYPE_OSRAM",
+          "uniqueID": "A60RGBW 01",
+          "settings": [],
+          "connector": "LGW1"
+        },
+        {
+          "type": "temperature_sensor",
+          "model": "VERSASENSE_SENSOR",
+          "uniqueID": "00-17-0D-00-00-30-E9-A7/3303/5702",
+          "settings": [
+          ],
+          "connector": "VSS1"
+        },
+        {
+          "type": "light_sensor",
+          "model": "VERSASENSE_SENSOR",
+          "uniqueID": "00-17-0D-00-00-30-DB-2B/9803/9805",
+          "settings": [
+          ],
+          "connector": "VSS1"
+        },
+        {
+          "type": "lock",
+          "model": "ARDUINO_SENSOR",
+          "uniqueID": "19b10001-e8f2-537e-4f6c-d104768a1214",
+          "settings": [
+          ],
+          "connector": "ARD1"
+        }
+      ]
+    },
+    {
+      "componentName": "LivingRoom",
+      "childComponents": [],
+      "devices": [
+        {
+          "type": "lamp",
+          "model": "LAMP_TYPE_HUE",
+          "uniqueID": "00:17:88:01:02:ac:76:9a-0b",
+          "settings": [],
+          "connector": "HGW1"
+        },
+        {
+          "type": "lamp",
+          "model": "LAMP_TYPE_HUE",
+          "uniqueID": "00:17:88:01:02:dc:2f:97-0b",
+          "settings": [],
+          "connector": "HGW1"
+        },
+        {
+          "type": "lamp",
+          "model": "LAMP_TYPE_OSRAM",
+          "uniqueID": "A60RGBW 02",
+          "settings": [],
+          "connector": "LGW1"
+        },
+        {
+          "type": "presence_sensor",
+          "model": "VERSASENSE_SENSOR",
+          "uniqueID": "00-17-0D-00-00-30-E9-62/3302/5500",
+          "settings": [],
+          "connector": "VSS1"
+        }
+      ]
+    }
+  ]
+}

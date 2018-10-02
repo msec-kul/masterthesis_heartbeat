@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/dark_grey"
+    tools:context="be.kuleuven.iot.MainActivity"
+    android:padding="5dp">
+        
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Sensor data"
+                android:textSize="24sp"
+                android:textColor="@color/textColor"
+                android:gravity="center"/>
+
+            <TextView
+                android:id="@+id/textViewWearableHeartRate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="24sp"
+                android:text="..."
+                android:textColor="@color/textColor"
+                android:gravity="center"/>
+
+            <TextView
+                android:id="@+id/textViewH7HeartRate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="24sp"
+                android:text="..."
+                android:textColor="@color/textColor"
+                android:gravity="center"/>
+
+            <TextView
+                android:id="@+id/textViewAcceleration"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="24sp"
+                android:text="..."
+                android:textColor="@color/textColor"
+                android:gravity="center"/>
+
+            <TextView
+                android:id="@+id/textViewGyroscope"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="24sp"
+                android:text="..."
+                android:textColor="@color/textColor"
+                android:gravity="center"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_alignParentBottom="true">
+
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:columnCount="3"
+                android:useDefaultMargins="true">
+                <TextView
+                    android:text="Android Wear"
+                    android:layout_width="0dp"
+                    android:layout_columnWeight=".40"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:textColor="@color/textColor"/>
+
+                <Switch
+                    android:id="@+id/switchDevices"
+                    android:layout_width="0dp"
+                    android:layout_columnWeight="0.20"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:textColor="@color/textColor"/>
+
+                <TextView
+                    android:text="Polar Beat"
+                    android:layout_width="0dp"
+                    android:layout_columnWeight=".40"
+                    android:gravity="center_horizontal"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/textColor"/>
+            </GridLayout>
+
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:columnCount="2"
+                android:useDefaultMargins="true">
+
+                <Button
+                    android:id="@+id/buttonMonitorHRMessage"
+                    android:layout_width="0dp"
+                    android:layout_gravity="fill_horizontal"
+                    android:layout_columnWeight="1"
+                    android:text="Monitor HR"
+                    android:background="@color/buttonColor"
+                    android:textColor="@color/textColor"
+                    android:onClick="requestHRMonitorButtonClicked"/>
+
+                <Button
+                    android:id="@+id/buttonUnmonitorHR"
+                    android:layout_width="0dp"
+                    android:layout_gravity="fill_horizontal"
+                    android:layout_columnWeight="1"
+                    android:text="Unmonitor HR"
+                    android:background="@color/buttonColor"
+                    android:textColor="@color/textColor"
+                    android:onClick="requestHRUnmonitorButtonClicked"/>
+
+                <Button
+                    android:id="@+id/buttonMonitorAMMessage"
+                    android:layout_width="0dp"
+                    android:layout_gravity="fill_horizontal"
+                    android:layout_columnWeight="1"
+                    android:text="Monitor AM"
+                    android:background="@color/buttonColor"
+                    android:textColor="@color/textColor"
+                    android:onClick="requestAMMonitorButtonClicked"/>
+
+                <Button
+                    android:id="@+id/buttonUnmonitorAM"
+                    android:layout_width="0dp"
+                    android:layout_gravity="fill_horizontal"
+                    android:layout_columnWeight="1"
+                    android:text="Unmonitor AM"
+                    android:background="@color/buttonColor"
+                    android:textColor="@color/textColor"
+                    android:onClick="requestAMUnmonitorButtonClicked"/>
+
+                <Button
+                    android:id="@+id/buttonMonitorGyroscopeMessage"
+                    android:layout_width="0dp"
+                    android:layout_gravity="fill_horizontal"
+                    android:layout_columnWeight="1"
+                    android:text="Monitor gyro"
+                    android:background="@color/buttonColor"
+                    android:textColor="@color/textColor"
+                    android:onClick="requestGyroscopeMonitorButtonClicked"/>
+
+                <Button
+                    android:id="@+id/buttonUnmonitorGyroscope"
+                    android:layout_width="0dp"
+                    android:layout_gravity="fill_horizontal"
+                    android:layout_columnWeight="1"
+                    android:text="Unmonitor gyro"
+                    android:background="@color/buttonColor"
+                    android:textColor="@color/textColor"
+                    android:onClick="requestGyroscopeUnmonitorButtonClicked"/>
+            </GridLayout>
+
+            <Button
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="3dp"
+                android:id="@+id/buttonMonitorAll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Monitor all"
+                android:background="@color/buttonColor"
+                android:textColor="@color/textColor"
+                android:onClick="monitorAllButtonClicked"/>
+
+            <Button
+                android:layout_margin="5dp"
+                android:id="@+id/buttonPair"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Pair"
+                android:background="@color/buttonColor"
+                android:textColor="@color/textColor"
+                android:onClick="pairButtonClicked"/>
+
+            <Button
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="3dp"
+                android:id="@+id/buttonClear"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Clear"
+                android:background="@color/buttonColor"
+                android:textColor="@color/textColor"
+                android:onClick="clearButtonClicked"/>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>
